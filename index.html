@@ -1,41 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- =========================
+         META CONFIGURATION
+         ========================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title (shown in browser tab & SEO) -->
     <title>Cat meme</title>
-	<link rel="stylesheet" href="index.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap" rel="stylesheet">
+
+    <!-- =========================
+         STYLESHEETS
+         ========================= -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Fonts (Karla) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap" 
+        rel="stylesheet"
+    >
 </head>
 
 <body>
-	<header>
-		<div class="header-inner">
-			<img src="./images/pumpkin.png" class="pumpkin-img">
-			<div>
-				<h2>Pumpkin's Purrfect...</h2>
-				<h1>Meme Picker</h1>
-			</div>
-		</div>
-	</header>
-	<main>
-		<h3>Select Your Current Emotion</h3>
-		<div class="controls-container">
-			<div class="emotion-radios" id="emotion-radios"></div>
-			<div class="gifs-check">
-				<label for="gifs-only-option" class="gifs-check-label">Animated GIFs only</label>
-				<input type="checkbox" id="gifs-only-option">
-			</div>
-			<button class="get-image-btn" id="get-image-btn">Get Image</button>
-		</div>
-	</main>
-		<div class="meme-modal" id="meme-modal">
-			<button class="meme-modal-close-btn" id="meme-modal-close-btn">X</button>
-			<div id="meme-modal-inner"></div>
-		</div>
-	<script src="index.js" type="module"></script>
-</body>
 
+    <!-- =========================
+         HEADER SECTION
+         ========================= -->
+    <header>
+        <div class="header-inner">
+            <!-- Logo / Image -->
+            <img 
+                src="./images/pumpkin.png" 
+                class="pumpkin-img" 
+                alt="Pumpkin logo"
+            >
+
+            <!-- App title -->
+            <div>
+                <h2>Pumpkin's Purrfect...</h2>
+                <h1>Meme Picker</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+    <main>
+        <h3>Select Your Current Emotion</h3>
+
+        <div class="controls-container">
+
+            <!-- Emotion radio buttons (rendered dynamically via JS) -->
+            <div 
+                class="emotion-radios" 
+                id="emotion-radios">
+            </div>
+
+            <!-- GIFs only checkbox -->
+            <div class="gifs-check">
+                <label 
+                    for="gifs-only-option" 
+                    class="gifs-check-label">
+                    Animated GIFs only
+                </label>
+
+                <input 
+                    type="checkbox" 
+                    id="gifs-only-option"
+                >
+            </div>
+
+            <!-- Action button -->
+            <button 
+                class="get-image-btn" 
+                id="get-image-btn">
+                Get Image
+            </button>
+
+        </div>
+    </main>
+
+    <!-- =========================
+         MODAL (HIDDEN BY DEFAULT)
+         ========================= -->
+    <div 
+        class="meme-modal" 
+        id="meme-modal">
+
+        <!-- Close modal button -->
+        <button 
+            class="meme-modal-close-btn" 
+            id="meme-modal-close-btn">
+            X
+        </button>
+
+        <!-- Modal content injected via JavaScript -->
+        <div id="meme-modal-inner"></div>
+    </div>
+
+    <!-- =========================
+         OVERLAY (BACKGROUND DIM)
+         ========================= -->
+    <!-- Clicking this closes the modal -->
+    <div 
+        class="overlay" 
+        id="overlay">
+    </div>
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <script src="index.js" type="module"></script>
+
+</body>
 </html>
